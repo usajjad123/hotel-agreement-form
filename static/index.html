@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Agreement Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <div class="header">
+          <div class="logo">
+            <i class="fas fa-hotel"></i>
+          </div>
+          <h1>Hotel Agreement Form</h1>
+          <p>
+            Please fill in all the required information to generate your
+            agreement
+          </p>
+        </div>
+
+        <form id="agreementForm" class="form">
+          <div class="form-section">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="agreement_number"
+                  >Agreement Number (optional)</label
+                >
+                <input
+                  type="text"
+                  id="agreement_number"
+                  name="agreement_number"
+                  placeholder="e.g., AGR-2025-001"
+                />
+              </div>
+              <div class="form-group">
+                <label for="agreement_date">Agreement Date (optional)</label>
+                <input
+                  type="date"
+                  id="agreement_date"
+                  name="agreement_date"
+                  placeholder="YYYY-MM-DD"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-section">
+            <h2><i class="fas fa-user"></i> Personal Information</h2>
+
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="nationality">Nationality *</label>
+              <input
+                type="text"
+                id="nationality"
+                name="nationality"
+                required
+                placeholder="e.g., Bangladesh"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="e.g., 0556825302"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Residence Type *</label>
+              <div class="radio-group">
+                <label class="radio-option">
+                  <input
+                    type="radio"
+                    name="citizen"
+                    value="RESIDENCE"
+                    required
+                  />
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">Residence</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="citizen" value="CITIZEN" required />
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">Citizen</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="citizen" value="VISITOR" required />
+                  <span class="radio-custom"></span>
+                  <span class="radio-label">Visitor</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="passport">Passport/ID Number *</label>
+              <input
+                type="text"
+                id="passport"
+                name="passport"
+                required
+                placeholder="e.g., 2564390371"
+              />
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h2><i class="fas fa-calendar-alt"></i> Agreement Details</h2>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="v1">Check-in Date *</label>
+                <input type="date" id="v1" name="v1" required />
+              </div>
+
+              <div class="form-group">
+                <label for="v2">Check-out Date *</label>
+                <input type="date" id="v2" name="v2" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="v3">Rent Description *</label>
+              <textarea
+                id="v3"
+                name="v3"
+                required
+                placeholder="e.g., MONTHLY RENT 1500/-JULY 6 DAYS 300/-"
+              ></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="v4">Total Rent *</label>
+                <input
+                  type="number"
+                  id="v4"
+                  name="v4"
+                  required
+                  placeholder="e.g., 1800"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="v5">Received Rent *</label>
+                <input
+                  type="number"
+                  id="v5"
+                  name="v5"
+                  required
+                  placeholder="e.g., 500"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="v6">Remaining Rent *</label>
+                <input
+                  type="number"
+                  id="v6"
+                  name="v6"
+                  required
+                  placeholder="e.g., 0"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="remaining_date">Remaining Date (optional)</label>
+                <input
+                  type="date"
+                  id="remaining_date"
+                  name="remaining_date"
+                  placeholder="YYYY-MM-DD"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="v7">Insurance/Deposit *</label>
+              <input
+                type="number"
+                id="v7"
+                name="v7"
+                required
+                placeholder="e.g., 0"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="v8">Flat No. *</label>
+              <input
+                type="text"
+                id="v8"
+                name="v8"
+                required
+                placeholder="e.g., H1-601. 2ROOM"
+              />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" id="previewBtn" class="btn btn-secondary">
+              <i class="fas fa-eye"></i> Preview
+            </button>
+            <button type="submit" id="generateBtn" class="btn btn-primary">
+              <i class="fas fa-file-pdf"></i> Generate PDF
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Preview Modal -->
+      <div id="previewModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Form Preview</h3>
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal-body">
+            <div id="previewContent"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading Overlay -->
+      <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+          <div class="spinner"></div>
+          <p>Generating PDF...</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
