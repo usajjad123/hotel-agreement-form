@@ -117,7 +117,7 @@ def check_required_files():
 
 def create_directories():
     """Create necessary directories"""
-    directories = ['static', 'ALL_AGREEMENTS']
+    directories = ['static']
     for directory in directories:
         os.makedirs(directory, exist_ok=True)
         print(f"✅ Directory ready: {directory}")

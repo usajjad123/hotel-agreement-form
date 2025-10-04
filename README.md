@@ -48,8 +48,8 @@ A modern, user-friendly web application for generating hotel agreement PDFs. Thi
 **Option 2: Manual activation**
 
 1. **Activate the virtual environment**:
-   - **Windows**: Run `activate.bat` or `venv\Scripts\activate`
-   - **macOS/Linux**: Run `source activate.sh` or `source venv/bin/activate`
+   - **Windows**: Run `venv\Scripts\activate`
+   - **macOS/Linux**: Run `source venv/bin/activate`
 
 2. **Start the Flask server**:
    ```bash
@@ -94,25 +94,26 @@ A modern, user-friendly web application for generating hotel agreement PDFs. Thi
 ## File Structure
 
 ```
-Hotel_Agreement_form/
+hotel-agreement-form/
 ├── setup.py              # Virtual environment setup script
 ├── app.py                # Flask server
+├── config.py             # Configuration settings
 ├── requirements.txt      # Python dependencies
 ├── README.md            # This file
-├── SAMPLE AGREEMENT.jpg # Your agreement template
+├── LICENSE              # License file
+├── SAMPLE_AGREEMENT.jpg # Your agreement template
 ├── Futura Book font.ttf # Custom font
 ├── start.py             # Startup script
 ├── start.bat            # Windows startup script
 ├── start.sh             # macOS/Linux startup script
-├── activate.bat         # Windows virtual environment activation
-├── activate.sh          # macOS/Linux virtual environment activation
 ├── venv/                # Virtual environment (created by setup.py)
-├── static/              # Web assets (auto-created)
-│   ├── index.html      # Main form page
-│   ├── styles.css      # Styling
-│   └── script.js       # JavaScript functionality
-├── ALL_AGREEMENTS/     # Generated PDFs (auto-created)
-└── img-script.py       # Original script (backup)
+│   ├── bin/             # Virtual environment binaries
+│   ├── lib/             # Installed packages
+│   └── pyvenv.cfg       # Virtual environment config
+├── static/             # Web assets
+│   ├── index.html       # Main form page
+│   ├── styles.css       # Styling
+│   └── script.js        # JavaScript functionality
 ```
 
 ## Development
