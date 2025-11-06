@@ -28,14 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
     citizen: "Residence Type",
     passport: "Passport/ID Number",
     remaining_date: "Remaining Date",
-    v1: "Check-in Date",
-    v2: "Check-out Date",
-    v3: "Rent Description",
-    v4: "Total Rent",
-    v5: "Received Rent",
-    v6: "Remaining Rent",
-    v7: "Insurance/Deposit",
-    v8: "Room Details",
+    checkin_date: "Check-in Date",
+    checkout_date: "Check-out Date",
+    rent_description: "Rent Description",
+    total_rent: "Total Rent",
+    received_rent: "Received Rent",
+    remaining_rent: "Remaining Rent",
+    insurance_deposit: "Insurance/Deposit",
+    flat_no: "Room Details",
   };
 
   // Preview functionality
@@ -96,10 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let [key, value] of formData.entries()) {
       if (key === "remaining_date") continue;
-      if (["agreement_date", "v1", "v2"].includes(key)) {
+      if (["agreement_date", "checkin_date", "checkout_date"].includes(key)) {
         value = formatDate(value);
       }
-      if (key === "v6" && formData.get("remaining_date")) {
+      if (key === "remaining_rent" && formData.get("remaining_date")) {
         const date = formData.get("remaining_date");
         value = `${value} - WILL PAY ${formatDate(date)}`;
       }
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = `${data.v8}-agreement.pdf`;
+        a.download = `${data.flat_no}-agreement.pdf`;
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
@@ -201,17 +201,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         break;
 
-      case "v4":
-      case "v5":
-      case "v7":
+      case "total_rent":
+      case "received_rent":
+      case "insurance_deposit":
         if ((value && isNaN(value)) || value < 0) {
           isValid = false;
           errorMessage = "Please enter a valid positive number";
         }
         break;
 
-      case "v1":
-      case "v2":
+      case "checkin_date":
+      case "checkout_date":
         if (value) {
           const date = new Date(value);
           if (isNaN(date.getTime())) {
@@ -253,9 +253,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Auto-calculate remaining balance
-  const totalAmountInput = document.getElementById("v4");
-  const advancePaymentInput = document.getElementById("v5");
-  const remainingBalanceInput = document.getElementById("v6");
+  const totalAmountInput = document.getElementById("total_rent");
+  const advancePaymentInput = document.getElementById("received_rent");
+  const remainingBalanceInput = document.getElementById("remaining_rent");
 
   function calculateRemainingBalance() {
     const total = parseFloat(totalAmountInput.value) || 0;
@@ -275,8 +275,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
 
-  const checkInInput = document.getElementById("v1");
-  const checkOutInput = document.getElementById("v2");
+  const checkInInput = document.getElementById("checkin_date");
+  const checkOutInput = document.getElementById("checkout_date");
 
   checkInInput.value = today.toISOString().split("T")[0];
   checkOutInput.value = tomorrow.toISOString().split("T")[0];

@@ -39,18 +39,18 @@ def generate_pdf():
             data.get("phone", ""),
             data.get("citizen", ""),
             data.get("passport", ""),
-            data.get("v1", ""),
-            data.get("v2", ""),
-            data.get("v3", ""),
-            data.get("v4", ""),
-            data.get("v5", ""),
-            data.get("v6", ""),
-            data.get("v7", ""),
-            data.get("v8", ""),
+            data.get("checkin_date", ""),
+            data.get("checkout_date", ""),
+            data.get("rent_description", ""),
+            data.get("total_rent", ""),
+            data.get("received_rent", ""),
+            data.get("remaining_rent", ""),
+            data.get("insurance_deposit", ""),
+            data.get("flat_no", ""),
         ]
 
         # Unpack values (same as original script)
-        agreement_number, agreement_date, name, nationality, phone, citizen, passport, v1, v2, v3, v4, v5, v6, v7, v8 = (
+        agreement_number, agreement_date, name, nationality, phone, citizen, passport, checkin_date, checkout_date, rent_description, total_rent, received_rent, remaining_rent, insurance_deposit, flat_no = (
             values
         )
 
@@ -95,19 +95,19 @@ def generate_pdf():
         draw.text((466, 558), citizen, font=font, fill=(0, 0, 0))
         draw.text((466, 601), passport, font=font, fill=(0, 0, 0))
 
-        draw.text((466, 718), v1, font=font, fill=(0, 0, 0))
-        draw.text((466, 768), v2, font=font, fill=(0, 0, 0))
-        draw.text((466, 815), v3, font=font, fill=(0, 0, 0))
-        draw.text((466, 860), v4, font=font, fill=(0, 0, 0))
+        draw.text((466, 718), checkin_date, font=font, fill=(0, 0, 0))
+        draw.text((466, 768), checkout_date, font=font, fill=(0, 0, 0))
+        draw.text((466, 815), rent_description, font=font, fill=(0, 0, 0))
+        draw.text((466, 860), total_rent, font=font, fill=(0, 0, 0))
 
-        draw.text((466, 910), v5, font=font, fill=(0, 0, 0))
-        draw.text((466, 960), v6, font=font, fill=(0, 0, 0))
-        draw.text((466, 1007), v7, font=font, fill=(0, 0, 0))
-        draw.text((466, 1053), v8, font=font, fill=(0, 0, 0))
+        draw.text((466, 910), received_rent, font=font, fill=(0, 0, 0))
+        draw.text((466, 960), remaining_rent, font=font, fill=(0, 0, 0))
+        draw.text((466, 1007), insurance_deposit, font=font, fill=(0, 0, 0))
+        draw.text((466, 1053), flat_no, font=font, fill=(0, 0, 0))
 
         # Save to temporary file
         temp_dir = tempfile.gettempdir()
-        filename = f"{v8}-agreement.pdf" if v8 else "agreement.pdf"
+        filename = f"{flat_no}-agreement.pdf" if flat_no else "agreement.pdf"
         temp_path = os.path.join(temp_dir, filename)
 
         # Save as PDF
